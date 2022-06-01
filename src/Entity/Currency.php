@@ -2,19 +2,31 @@
 
 namespace App\Entity;
 
-use App\Repository\CurrencyRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CurrencyRepository::class)]
+/**
+ * Currency
+ *
+ * @ORM\Table(name="currency", uniqueConstraints={@ORM\UniqueConstraint(name="key_name", columns={"code"})})
+ * @ORM\Entity
+ */
 class Currency
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    private $id;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private int $id;
 
-    #[ORM\Column(type: 'string', length: 3)]
-    private $code;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="string", length=3, nullable=false)
+     */
+    private string $code;
 
     public function getId(): ?int
     {

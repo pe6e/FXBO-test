@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\CurrencyCource;
+use App\Entity\CurrencyRate;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<CurrencyCource>
+ * @extends ServiceEntityRepository<CurrencyRate>
  *
- * @method CurrencyCource|null find($id, $lockMode = null, $lockVersion = null)
- * @method CurrencyCource|null findOneBy(array $criteria, array $orderBy = null)
- * @method CurrencyCource[]    findAll()
- * @method CurrencyCource[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method CurrencyRate|null find($id, $lockMode = null, $lockVersion = null)
+ * @method CurrencyRate|null findOneBy(array $criteria, array $orderBy = null)
+ * @method CurrencyRate[]    findAll()
+ * @method CurrencyRate[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class CurrencyCourceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, CurrencyCource::class);
+        parent::__construct($registry, CurrencyRate::class);
     }
 
-    public function add(CurrencyCource $entity, bool $flush = false): void
+    public function add(CurrencyRate $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class CurrencyCourceRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(CurrencyCource $entity, bool $flush = false): void
+    public function remove(CurrencyRate $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class CurrencyCourceRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return CurrencyCource[] Returns an array of CurrencyCource objects
+//     * @return CurrencyRate[] Returns an array of CurrencyRate objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class CurrencyCourceRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?CurrencyCource
+//    public function findOneBySomeField($value): ?CurrencyRate
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

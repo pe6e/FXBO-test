@@ -108,6 +108,4 @@ class CurrencyRate
     {
         $this->currency = $currency;
     }
-
-
 }

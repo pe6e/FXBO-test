@@ -11,6 +11,8 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.12",
         "symfony/console": "6.0.*",
+        "symfony/css-selector": "6.0.*",
+        "symfony/dom-crawler": "6.0.*",
         "symfony/dotenv": "6.0.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.0.*",

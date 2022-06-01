@@ -179,6 +179,9 @@
             "bin/console"
         ]
     },
+    "symfony/css-selector": {
+        "version": "v6.0.3"
+    },
     "symfony/dependency-injection": {
         "version": "v6.0.9"
     },
@@ -186,6 +189,9 @@
         "version": "v3.0.1"
     },
     "symfony/doctrine-bridge": {
+        "version": "v6.0.9"
+    },
+    "symfony/dom-crawler": {
         "version": "v6.0.9"
     },
     "symfony/dotenv": {

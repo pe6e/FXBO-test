@@ -36,55 +36,78 @@ class CurrencyRate
     private string $value;
 
     /**
-     * @var \Currency
+     * @var Currency
      *
      * @ORM\ManyToOne(targetEntity="Currency")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="currency", referencedColumnName="id")
      * })
      */
-    private \Currency $currency;
+    private Currency $currency;
 
-
-
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate(\DateTime $date): void
     {
         $this->date = $date;
-
-        return $this;
     }
 
-    public function getCurrency(): ?int
-    {
-        return $this->currency;
-    }
-
-    public function setCurrency(int $currency): self
-    {
-        $this->currency = $currency;
-
-        return $this;
-    }
-
-    public function getValue(): ?string
+    /**
+     * @return string
+     */
+    public function getValue(): string
     {
         return $this->value;
     }
 
-    public function setValue(string $value): self
+    /**
+     * @param string $value
+     */
+    public function setValue(string $value): void
     {
         $this->value = $value;
-
-        return $this;
     }
+
+    /**
+     * @return Currency
+     */
+    public function getCurrency(): Currency
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param Currency $currency
+     */
+    public function setCurrency(Currency $currency): void
+    {
+        $this->currency = $currency;
+    }
+
+
 }

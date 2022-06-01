@@ -28,20 +28,35 @@ class Currency
      */
     private string $code;
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getCode(): ?string
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode(): string
     {
         return $this->code;
     }
 
-    public function setCode(string $code): self
+    /**
+     * @param string $code
+     */
+    public function setCode(string $code): void
     {
         $this->code = $code;
-
-        return $this;
     }
 }

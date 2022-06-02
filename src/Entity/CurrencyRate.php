@@ -39,7 +39,7 @@ class CurrencyRate
     /**
      * @var Currency
      *
-     * @ORM\ManyToOne(targetEntity="Currency")
+     * @ORM\ManyToOne(targetEntity="Currency",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="currency", referencedColumnName="id")
      * })

@@ -54,9 +54,12 @@ class Currency
 
     /**
      * @param string $code
+     * @return Currency
      */
-    public function setCode(string $code): void
+    public function setCode(string $code): Currency
     {
         $this->code = $code;
+
+        return $this;
     }
 }

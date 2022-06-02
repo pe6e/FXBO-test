@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,11 +23,11 @@ class CurrencyRate
     private int $id;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="date", type="date", nullable=false)
      */
-    private \DateTime $date;
+    private DateTime $date;
 
     /**
      * @var string
@@ -62,19 +63,21 @@ class CurrencyRate
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getDate(): \DateTime
+    public function getDate(): DateTime
     {
         return $this->date;
     }
 
     /**
-     * @param \DateTime $date
+     * @param DateTime $date
+     * @return CurrencyRate
      */
-    public function setDate(\DateTime $date): void
+    public function setDate(DateTime $date): CurrencyRate
     {
         $this->date = $date;
+        return $this;
     }
 
     /**
@@ -87,10 +90,12 @@ class CurrencyRate
 
     /**
      * @param string $value
+     * @return CurrencyRate
      */
-    public function setValue(string $value): void
+    public function setValue(string $value): CurrencyRate
     {
         $this->value = $value;
+        return $this;
     }
 
     /**
@@ -103,9 +108,11 @@ class CurrencyRate
 
     /**
      * @param Currency $currency
+     * @return CurrencyRate
      */
-    public function setCurrency(Currency $currency): void
+    public function setCurrency(Currency $currency): CurrencyRate
     {
         $this->currency = $currency;
+        return $this;
     }
 }

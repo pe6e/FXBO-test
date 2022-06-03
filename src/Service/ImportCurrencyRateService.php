@@ -13,7 +13,6 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ImportCurrencyRateService
 {
-
     public function __construct(protected array $currencyRateHandlers, protected HttpClientInterface $httpClient, protected ManagerRegistry $doctrine, protected EntityManagerInterface $em)
     {
     }

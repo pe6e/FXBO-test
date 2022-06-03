@@ -39,10 +39,8 @@ class CurrencyRate
     /**
      * @var Currency
      *
-     * @ORM\ManyToOne(targetEntity="Currency",cascade={"persist"})
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity=Currency::class, cascade={"persist"})
+     * @ORM\JoinColumn(name="currency", referencedColumnName="id")
      */
     private Currency $currency;
 
@@ -74,7 +72,7 @@ class CurrencyRate
      * @param DateTime $date
      * @return CurrencyRate
      */
-    public function setDate(DateTime $date): CurrencyRate
+    public function setDate(DateTime $date): self
     {
         $this->date = $date;
         return $this;
@@ -92,7 +90,7 @@ class CurrencyRate
      * @param string $value
      * @return CurrencyRate
      */
-    public function setValue(string $value): CurrencyRate
+    public function setValue(string $value): self
     {
         $this->value = $value;
         return $this;
@@ -110,7 +108,7 @@ class CurrencyRate
      * @param Currency $currency
      * @return CurrencyRate
      */
-    public function setCurrency(Currency $currency): CurrencyRate
+    public function setCurrency(Currency $currency): self
     {
         $this->currency = $currency;
         return $this;

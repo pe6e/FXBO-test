@@ -35,6 +35,7 @@ class ImportCurrencyRate extends Command
     {
         try {
             $this->importCurrencyRateService->importCurrencyRate();
+            $output->write('Курсы валют импортированы в базу' . PHP_EOL);
             return self::SUCCESS;
         } catch (\Exception|ClientExceptionInterface|RedirectionExceptionInterface|ServerExceptionInterface|TransportExceptionInterface $e) {
             $output->write($e->getMessage());
